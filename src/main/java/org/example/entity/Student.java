@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 @Entity
-@Table(name="STUDENT")
+@Table(name="STUDENTS")
 @Data
 public class Student {
     @Id
@@ -12,6 +12,6 @@ public class Student {
     @Column(name = "ID")
     private Long id;
 
-    @Column(name="STUDENT_NAME", length=50, nullable=false, unique = true)
+    @Column(name="NAME", length=50, nullable=false, unique = true)
     private String name;
 }
