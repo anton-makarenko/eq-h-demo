@@ -14,4 +14,8 @@ public class Book {
 
     @Column(name = "NAME", length = 50, unique = true)
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "STUDENT_ID")
+    private Student student;
 }

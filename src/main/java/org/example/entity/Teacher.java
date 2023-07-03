@@ -3,6 +3,8 @@ package org.example.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.Set;
+
 @Entity
 @Table(name = "TEACHERS")
 @Data
@@ -14,4 +16,7 @@ public class Teacher {
 
     @Column(name = "NAME", length = 50, unique = true)
     private String name;
+
+    @ManyToMany
+    private Set<Student> students;
 }

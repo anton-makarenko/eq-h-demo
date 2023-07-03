@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.util.Set;
+
 @Entity
 @Table(name="STUDENTS")
 @Data
@@ -16,4 +18,10 @@ public class Student {
     @EqualsAndHashCode.Exclude
     @Column(name="NAME", length=50, nullable = false, unique = true)
     private String name;
+
+    @OneToMany(mappedBy = "student")
+    private Set<Book> books;
+
+    @ManyToMany
+    private Set<Teacher> teachers;
 }

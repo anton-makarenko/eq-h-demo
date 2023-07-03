@@ -1,9 +1,11 @@
 package org.example.entity;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 @Entity
 @Table(name = "SUBJECTS")
+@Data
 public class Subject {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
