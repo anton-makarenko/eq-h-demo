@@ -7,6 +7,7 @@ plugins {
 val springBootVersion = "3.1.0"
 val lombokVersion = "1.18.28"
 val dbDriverVersion = "42.6.0"
+val h2Version = "2.1.214"
 
 group = "org.example"
 version = "1.0-SNAPSHOT"
@@ -26,6 +27,8 @@ dependencies {
 
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("com.h2database:h2:$h2Version")
 
     annotationProcessor("org.projectlombok:lombok:$lombokVersion")
 }
