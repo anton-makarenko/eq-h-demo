@@ -1,5 +1,6 @@
 package org.example.repository;
 
+import org.example.entity.Book;
 import org.example.entity.Student;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -26,6 +27,8 @@ public class StudentRepositoryTest {
     public void shouldSaveAllRecords() {
         Student student1 = new Student();
         student1.setName("One");
+        student1.setBooks(new HashSet<>());
+        student1.setBooks(initBooks());
 
         Student student2 = new Student();
         student2.setName("One");
@@ -36,5 +39,17 @@ public class StudentRepositoryTest {
 
         int size = studentRepository.saveAll(students).size();
         assertEquals(2, size);
+    }
+
+    private Set<Book> initBooks() {
+        Set<Book> books = new HashSet<>();
+        Book book1 = new Book();
+        book1.setName("Book1");
+
+        Book book2 = new Book();
+        book2.setName("book2");
+        books.add(book1);
+        books.add(book2);
+        return books;
     }
 }

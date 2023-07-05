@@ -20,7 +20,7 @@ public class Student {
     private String name;
 
     @OneToMany(mappedBy = "student")
-    private Set<Book> books;
+    private Set<Book> books = Set.of();
 
     @ManyToMany
     private Set<Teacher> teachers;
