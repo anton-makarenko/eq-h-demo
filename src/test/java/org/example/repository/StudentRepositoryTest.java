@@ -27,11 +27,10 @@ public class StudentRepositoryTest {
     public void shouldSaveAllRecords() {
         Student student1 = new Student();
         student1.setName("One");
-        student1.setBooks(new HashSet<>());
         student1.setBooks(initBooks());
 
         Student student2 = new Student();
-        student2.setName("One");
+        student2.setName("Two");
 
         Set<Student> students = new HashSet<>();
         students.add(student1);
@@ -39,6 +38,11 @@ public class StudentRepositoryTest {
 
         int size = studentRepository.saveAll(students).size();
         assertEquals(2, size);
+    }
+
+    @Test
+    public void shouldSaveOneStudent() {
+
     }
 
     private Set<Book> initBooks() {
